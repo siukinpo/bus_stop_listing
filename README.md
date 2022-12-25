@@ -18,14 +18,14 @@ $ cd ios && bundle install && pod install
 ```
 
 ### IOS
-Run the following command to start the react native project on your IOS simulator
+Run the following command to start the react native project on your IOS simulator.
 
 ```bash
 $ npx react-native run-ios
 ```
 
 ### Android
-Run the following command to start the react native project on your android emulator
+Run the following command to start the react native project on your android emulator.
 ```bash
 $ npx react-native run-android
 ```
