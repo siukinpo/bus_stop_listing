@@ -29,3 +29,9 @@ Run the following command to start the react native project on your android emul
 ```bash
 $ npx react-native run-android
 ```
+
+![Simulator Screen Shot - iPhone 14 - 2022-12-25 at 23 49 23](https://user-images.githubusercontent.com/87114277/209475967-ba38a2f3-3ae5-44ed-807f-f14eeb2b61be.png)
+
+![Screenshot_1671983292](https://user-images.githubusercontent.com/87114277/209475971-1a67ef54-d949-4169-82b0-d7ea675b7425.png)
+
+
