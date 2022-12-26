@@ -1,6 +1,5 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Pressable, View, Text, StyleSheet, Alert, LogBox} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
 import {useAppNavigation} from '../Route';
 
 interface StopETAType {
@@ -37,7 +36,6 @@ function BusStopItem({
   busRouteInfo: StopETAType;
   busStopInfo: StopInfoType[];
 }) {
-  // const navigation = useNavigation();
   const navigation = useAppNavigation();
 
   let filtered_busStopName_name = '';
@@ -80,7 +78,6 @@ function BusStopItem({
         </View>
       </View>
       <View style={styles.etaContainer}>
-        {/* <Text>{busRouteInfo.eta}</Text> */}
         <View style={styles.etaMinContainer}>
           <Text style={styles.etaMinText}>
             {timeDifference > 0 ? Math.ceil(timeDifference) : '-'}
@@ -96,7 +93,6 @@ function BusStopItem({
 
 const styles = StyleSheet.create({
   buttonPressed: {
-    // opacity: 0.5,
     backgroundColor: '#E3E3E3',
   },
   stopItemContainer: {
@@ -123,7 +119,6 @@ const styles = StyleSheet.create({
   },
   destContainer: {
     flex: 1.5,
-    // justifyContent: 'center',
     flexDirection: 'row',
     alignItems: 'flex-end',
   },

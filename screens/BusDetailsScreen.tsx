@@ -1,10 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View, StyleSheet, Image} from 'react-native';
-import {useNavigation, useRoute} from '@react-navigation/native';
+import {Text, View, StyleSheet} from 'react-native';
 import {useAppNavigation, useAppRoute} from '../Route';
-import {template} from '@babel/core';
-import {ScrollView} from 'react-native-gesture-handler';
-import Map from '../components/BusStopMap';
 import BusStopMap from '../components/BusStopMap';
 // import {LatLng, LeafletView} from 'react-native-leaflet-view';
 

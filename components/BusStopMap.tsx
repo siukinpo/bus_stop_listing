@@ -45,9 +45,6 @@ function BusStopMap({
 const styles = StyleSheet.create({
   map: {
     flex: 1,
-    // borderRadius: 10,
-    // borderWidth: 1,
-    // margin: 5,
   },
 });
 

@@ -4,7 +4,6 @@ import {
   FlatList,
   ScrollView,
   StyleSheet,
-  Text,
   View,
   RefreshControl,
   LogBox,
@@ -46,10 +45,8 @@ LogBox.ignoreLogs(['Network request failed']);
 function BusStopsScreen() {
   const [stopETAInfoBFA, setStopETAInfoBFA] = useState<StopETAType[]>([]);
   const [stopETAInfo5FB, setStopETAInfo5FB] = useState<StopETAType[]>([]);
-  // const [stopETAInfo, setStopETAInfo] = useState<StopETAType[]>([]);
   const [busStopInfo, setBusStopInfo] = useState<StopInfoType[]>([]);
   const [refreshing, setRefreshing] = React.useState(false);
-  // const busStopList = ['40', '34M', '234X', '30', '30X', '34'];
 
   const busStopSaved = ['BFA3460955AC820C', '5FB1FCAF80F3D97D'];
 
@@ -76,17 +73,15 @@ function BusStopsScreen() {
     )
       .then(response => response.json())
       .then(response => response['data'])
-      .then(
-        response =>
-          response
-            .map((item: StopETAType) => {
-              item.bus_stop = 'BFA3460955AC820C';
-              return item;
-            })
-            .filter((item: StopETAType) => {
-              return item.eta_seq == 1;
-            }),
-        // .filter((item: StopETAType) => busStopList.includes(item.route)),
+      .then(response =>
+        response
+          .map((item: StopETAType) => {
+            item.bus_stop = 'BFA3460955AC820C';
+            return item;
+          })
+          .filter((item: StopETAType) => {
+            return item.eta_seq == 1;
+          }),
       )
       .then(response => setStopETAInfoBFA(response))
       .catch(err => {
@@ -99,17 +94,15 @@ function BusStopsScreen() {
     )
       .then(response => response.json())
       .then(response => response['data'])
-      .then(
-        response =>
-          response
-            .map((item: StopETAType) => {
-              item.bus_stop = '5FB1FCAF80F3D97D';
-              return item;
-            })
-            .filter((item: StopETAType) => {
-              return item.eta_seq == 1;
-            }),
-        // .filter((item: StopETAType) => busStopList.includes(item.route)),
+      .then(response =>
+        response
+          .map((item: StopETAType) => {
+            item.bus_stop = '5FB1FCAF80F3D97D';
+            return item;
+          })
+          .filter((item: StopETAType) => {
+            return item.eta_seq == 1;
+          }),
       )
       .then(response => setStopETAInfo5FB(response))
       .catch(err => {
@@ -123,9 +116,8 @@ function BusStopsScreen() {
       .then(response => response.json())
       .then(response => response['data'])
       .then(response =>
-        response.filter(
-          (item: StopInfoType) => busStopSaved.includes(item.stop),
-          // item['stop'].includes(busStopSaved),
+        response.filter((item: StopInfoType) =>
+          busStopSaved.includes(item.stop),
         ),
       )
       .then(response => setBusStopInfo(response))
@@ -139,7 +131,6 @@ function BusStopsScreen() {
     fetchBusStopInfo();
     setInterval(() => {
       fetchBusStopInfo();
-      // console.log('hi');
     }, 30000);
   }, []);
 
@@ -175,9 +166,7 @@ function BusStopsScreen() {
 
 const styles = StyleSheet.create({
   scrollView: {
-    // flex: 1,
     height: '100%',
-    // borderWidth: 2,
   },
   scrollViewContainer: {
     height: '98.5%',
